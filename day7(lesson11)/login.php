@@ -1,7 +1,7 @@
 <?php include("header.php");?>
 <div class="login">
 
-<form class="form-signin" action="" method="post">
+<form class="form-signin" action="loginlogic.php" method="post">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Username</label>
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username"  name="username">

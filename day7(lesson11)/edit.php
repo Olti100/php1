@@ -3,7 +3,7 @@ include_once("config.php");
 
 $id=$_GET ['id'];
 
-$sql="SELECT * FROM user WHERE id=:id";
+$sql="SELECT * FROM users WHERE id=:id";
 
 $prep=$conn->prepare($sql);
 
@@ -24,7 +24,7 @@ $data=$prep->fetch();
     <form action="update.php" method="POST">
         <input type="hidden" name="id" id="" value="<?php echo $data['id']?>"><br>
         <input type="text" name="name" id="" value="<?php echo $data['name']?>"><br>
-        <input type="text" name="surname" id="" value="<?php echo $data['surname']?>"><br>
+        <input type="text" name="username" id="" value="<?php echo $data['username']?>"><br>
         <input type="email" name="email" id="" value="<?php echo $data['email']?>"><br>
 
         <button type="submit" name="update">Update</button>

@@ -2,7 +2,7 @@
 
 <div class="signup">
 
-<form class="form-signin" action="" method="post">
+<form class="form-signin" action="register.php" method="post">
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-md-6 mb-4">
