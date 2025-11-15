@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
         echo "You need to fill all the fields";
 
     }else{        
-        $sql="SELECT username FROm users WHERE username=:username";
+        $sql="SELECT username FROM users WHERE username=:username";
         $temSql=$conn->prepare($sql);
         $temSql->bindParam('username',$username);
         $temSql->execute();

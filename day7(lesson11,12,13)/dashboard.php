@@ -37,5 +37,37 @@
     }
     ?>
 </table>
+
+<?php
+   include_once('config.php');
+   $getUsers=$conn->prepare("SELECT * FROM products");
+   $getUsers->execute();
+   $user=$getUsers->fetchAll();
+
+?>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    <?php
+    foreach($user as $products){
+    ?>
+    <tr>
+        <td><?= $products['id']?></td>
+        <td><?= $products['title']?></td>
+        <td><?= $products['description']?></td>
+        <td><?= $products['quantity']?></td>
+        <td><?= $products['price']?></td>
+        <td><?= "<a href='delete.php?id=$products[id]'>Delete</a> | <a href='editproducts.php?id=$products[id]'>Update</a>" ?></td>
+        <td><?= "<a href='add.php'>Add</a>" ?></td>
+    </tr>
+    <?php
+    }
+    ?>
+</table>
 </body>
 </html>
