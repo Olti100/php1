@@ -11,12 +11,12 @@ if(isset($_POST['submit'])){
         header("refresh:2;url-login.php");
     }else{
         $sql="SELECT * FROM users WHERE username=:username";
-
+        
         $insertSql=$conn->prepare($sql);
         $insertSql->bindParam(':username',$username);
 
         $insertSql->execute();
-
+    
         if($insertSql->rowCount()>0){
             $data=$insertSql->fetch();
             if(password_verify($password,$data['password'])){
